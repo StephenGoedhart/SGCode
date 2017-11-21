@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- CSS source -->
-    <link href="vendors/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href="vendors/resetCss/reset.css" rel="stylesheet">
-    <link href="source/css/style.css" rel="stylesheet">
-    <!-- SEO metadata -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="copyright" content="SGCode is a registered trademark of SGCode">
-    <meta name="description" content="Stephen Goedhart's portfolio website.">
-    <meta name="keywords" content="stephen, goedhart, portfolio, code, programming, design, sg, sgcode">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div id="container">
-      <div class="col-xs-6 col-xs-offset-3" style="height:2px;">
-        <div id="avatar">Avatar</div>
-        <div id="sm">SocialMedia</div>
-        <div id="name">Stephen Goedhart</div>
-        <div id="quote">"A brainy quote"</div>
+<?php include 'header.inc'; ?>
+<div id="content">
+
+  <!-- START: content slider -->
+  <!-- Add as many slides as you want -->
+  <div id="content-slider">
+    <div id="content-slider-container">
+      <div class='content-slider-item image1'>
+        <div class='content-slider-item-title'><h1>Title1</h1></div>
+        <div class='content-slider-item-subtitle'><h3>Text1</h3></div>
       </div>
-
+      <div class='content-slider-item bg-primary'>
+        <div class='content-slider-item-title'><h1>Title2</h1></div>
+        <div class='content-slider-item-subtitle'><h3>Text2</h3></div>
+      </div>
+      <div class='content-slider-item'>
+        <div class='content-slider-item-title'><h1>Title3</h1></div>
+        <div class='content-slider-item-subtitle'><h3>Text3</h3></div>
+      </div>
+      <div class='content-slider-item'>
+        <div class='content-slider-item-title'><h1>Title4</h1></div>
+        <div class='content-slider-item-subtitle'><h3>Text4</h3></div>
+      </div>
+      <div class='content-slider-item bg-primary'>
+        <div class='content-slider-item-title'><h1>Title5</h1></div>
+        <div class='content-slider-item-subtitle'><h3>Text5</h3></div>
+      </div>
     </div>
-
-
-    <script src="vendors/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
-    <script src="vendors/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
+  </div>
+  <!-- END: content slider -->
+</div>
+<?php include 'footer.inc'; ?>
