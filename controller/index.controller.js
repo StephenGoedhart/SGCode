@@ -25,44 +25,45 @@ var sliderContainer = $("#content-slider-container");
 sliderContainer.height( (100 * sliderItems.length) + "vh");
 
 function sliderMoveDown(){
-  //Make sure there is a next page
   if(pageIndex < sliderItems.length - 1 && nextPageReady){
     nextPageReady = false;
     i = pageIndex;
     pageIndex++;
-    title = $(sliderTitles[i]);
-    subtitle = $(sliderSubtitles[i]);
-    page =  $(sliderItems[i]);
+    currentTitle = $(sliderTitles[i]);
+    currentSubtitle = $(sliderSubtitles[i]);
+    currentPage =  $(sliderItems[i]);
+    nextTitle = $(sliderTitles[pageIndex]);
+    nextSubtitle = $(sliderSubtitles[pageIndex]);
 
-    title.animate({marginTop: "+=4vh"}, 250, function(){
-      title.animate({marginTop: "-110vh"}, 500);
-      page.animate({marginTop: "+=4vh"}, 250, function(){
-
-        title = $(sliderTitles[pageIndex]);
-        subtitle = $(sliderSubtitles[pageIndex]);
-
-        title.animate({marginTop: "101vh"}, 500);
-        page.animate({marginTop: "-101vh"}, 500, function(){
-
-          title.animate({marginTop: "26vh"}, 500, function(){
-             title.animate({marginTop: "34vh"}, 300, function(){
-                 title.animate({marginTop: "30vh"}, 300);
-             });
-          });
-
-          subtitle.animate({marginTop: "-2vh"}, 500, function(){
-             subtitle.animate({marginTop: "2vh"}, 300, function(){
-                 subtitle.animate({marginTop: "0vh"}, 300, function(){
-                   nextPageReady =  true;
-                 });
-             });
-          });
-        });
-      });
+    currentTitle.animate({marginTop: "34vh"}, 300, function(){
+      currentTitle.animate({marginTop: "-130vh"}, 500);
     });
 
+    currentSubtitle.animate({marginTop: "-2vh"}, 150, function(){
+      currentSubtitle.animate({marginTop: "2vh"}, 150);
+    });
 
+    setTimeout(function(){
+      currentPage.animate({marginTop: "4vh"}, 150, function(){
+        currentPage.animate({marginTop: "-104.5vh"}, 500, function(){
+          currentPage.animate({marginTop: "-100.5vh"}, 150);
+        });
+      });
+    }, 450);
 
+  setTimeout(function(){
+    nextTitle.animate({marginTop: "24vh"}, 500, function(){
+       nexTitle.animate({marginTop: "30vh"}, 150);
+    });
+  }, 1100);
+
+  setTimeout(function(){
+    nextSubtitle.animate({marginTop: "-2vh"}, 500, function(){
+       nextSubtitle.animate({marginTop: "0vh"}, 150, function(){
+         nextPageReady =  true;
+       });
+    });
+  }, 1250);
   }
 }
 
@@ -72,21 +73,30 @@ function sliderMoveUp(){
     nextPageReady = false;
     i = pageIndex;
     pageIndex--;
-    title = $(sliderTitles[i]);
-    subtitle = $(sliderSubtitles[i]);
-    page =  $(sliderItems[i-1]);
+    currentTitle = $(sliderTitles[i]);
+    currentSubtitle = $(sliderSubtitles[i]);
+    previousPage =  $(sliderItems[pageIndex]);
+    previousTitle = $(sliderTitles[pageIndex]);
+    previousSubtitle = $(sliderSubtitles[pageIndex]);
 
-    //Page animation
-     page.animate( {marginTop: "4vh"}, 500, function(){
-       page.animate( {marginTop: "-100vh"}, 150);
-     });
+    currentTitle.animate({marginTop: "26vh"}, 250, function(){
+      currentTitle.animate({marginTop: "110vh"}, 500, function(){
+        previousPage.animate({marginTop: "4vh"}, 250, function(){
 
-     //Title animation
-     setTimeout(function(){
-       title.animate({marginTop: "28vh"}, 500, function(){
-          title.animate({marginTop: "-100vh"}, 150);
-       });
-     }, 150);
+          previousPage.animate({marginTop: "0vh"}, 500);
+          previousTitle.animate({marginTop: "-20vh"}, 1);
+          previousTitle.animate({marginTop: "34vh"}, 500, function(){
+            previousTitle.animate({marginTop: "30vh"}, 250);
+          });
+
+            previousSubtitle.animate({marginTop: "2vh"}, 500, function(){
+              previousSubtitle.animate({marginTop: "-2vh"}, 250, function(){
+                  nextPageReady = true;
+              });
+            });
+        });
+      });
+    });
   }
 }
 
@@ -120,11 +130,11 @@ initialize();
 
 
 $("#nextPage").click(function(){
-  sliderMoveUp();
+    sliderMoveDown();
 });
 
 $("#prevPage").click(function(){
-  sliderMoveDown();
+    sliderMoveUp();
 });
 
 $(window).load(function(){

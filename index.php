@@ -9,7 +9,7 @@
         <div class='content-slider-item-title'><h1>Title1</h1></div>
         <div class='content-slider-item-subtitle'><h3>Text1</h3></div>
       </div>
-      <div class='content-slider-item bg-primary'>
+      <div class='content-slider-item image1'>
         <div class='content-slider-item-title'><h1>Title2</h1></div>
         <div class='content-slider-item-subtitle'><h3>Text2</h3></div>
       </div>
