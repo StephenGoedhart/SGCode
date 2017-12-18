@@ -35,12 +35,12 @@ function sliderMoveDown(){
     nextTitle = $(sliderTitles[pageIndex]);
     nextSubtitle = $(sliderSubtitles[pageIndex]);
 
-    currentTitle.animate({marginTop: "34vh"}, 300, function(){
-      currentTitle.animate({marginTop: "-130vh"}, 500);
+    currentTitle.animate({marginTop: "34vh"}, 150, function(){
+      currentTitle.animate({marginTop: "-66vh"}, 500);
     });
 
-    currentSubtitle.animate({marginTop: "-2vh"}, 150, function(){
-      currentSubtitle.animate({marginTop: "2vh"}, 150);
+    currentSubtitle.animate({marginTop: "-2vh"}, 75, function(){
+      currentSubtitle.animate({marginTop: "2vh"}, 75);
     });
 
     setTimeout(function(){
@@ -49,13 +49,16 @@ function sliderMoveDown(){
           currentPage.animate({marginTop: "-100.5vh"}, 150);
         });
       });
-    }, 450);
+    }, 200);
+
+    nextTitle.animate({marginTop: "100vh"}, 1);
+    nextSubtitle.animate({marginTop: "100vh"}, 1);
 
   setTimeout(function(){
     nextTitle.animate({marginTop: "24vh"}, 500, function(){
-       nexTitle.animate({marginTop: "30vh"}, 150);
+       nextTitle.animate({marginTop: "30vh"}, 150);
     });
-  }, 1100);
+  }, 650);
 
   setTimeout(function(){
     nextSubtitle.animate({marginTop: "-2vh"}, 500, function(){
@@ -63,12 +66,11 @@ function sliderMoveDown(){
          nextPageReady =  true;
        });
     });
-  }, 1250);
+  }, 800);
   }
 }
 
 function sliderMoveUp(){
-  //Make sure there is a next page
   if(pageIndex > 0 && nextPageReady){
     nextPageReady = false;
     i = pageIndex;
@@ -79,24 +81,44 @@ function sliderMoveUp(){
     previousTitle = $(sliderTitles[pageIndex]);
     previousSubtitle = $(sliderSubtitles[pageIndex]);
 
-    currentTitle.animate({marginTop: "26vh"}, 250, function(){
-      currentTitle.animate({marginTop: "110vh"}, 500, function(){
-        previousPage.animate({marginTop: "4vh"}, 250, function(){
+    nextSubtitle.animate({marginTop: "-4vh"}, 150, function(){
+       nextSubtitle.animate({marginTop: "0"}, 150);
+    });
 
-          previousPage.animate({marginTop: "0vh"}, 500);
-          previousTitle.animate({marginTop: "-20vh"}, 1);
-          previousTitle.animate({marginTop: "34vh"}, 500, function(){
-            previousTitle.animate({marginTop: "30vh"}, 250);
-          });
+    setTimeout(function(){
+      nextTitle.animate({marginTop: "26vh"}, 150, function(){
+         nextTitle.animate({marginTop: "100vh"}, 500);
+      });
+    }, 75);
 
-            previousSubtitle.animate({marginTop: "2vh"}, 500, function(){
-              previousSubtitle.animate({marginTop: "-2vh"}, 250, function(){
-                  nextPageReady = true;
-              });
-            });
+    setTimeout(function(){
+      previousPage.animate({marginTop: "-104vh"}, 150, function(){
+        previousPage.animate({marginTop: "4vh"}, 500, function(){
+          previousPage.animate({marginTop: "0vh"}, 150);
         });
       });
-    });
+    }, 225);
+
+    previousTitle.animate({marginTop: "-100"}, 1);
+    previousSubtitle.animate({marginTop: "0vh"}, 1);
+
+    setTimeout(function(){
+      previousSubtitle.animate({marginTop: "10vh"}, 150, function(){
+        previousSubtitle.animate({marginTop: "4.5vh"}, 150, function(){
+        });
+      });
+    }, 750);
+
+    setTimeout(function(){
+      previousTitle.animate({marginTop: "36vh"}, 500, function(){
+        previousTitle.animate({marginTop: "30vh"}, 150, function(){
+             nextPageReady = true;
+        });
+      });
+    }, 900);
+
+
+
   }
 }
 
